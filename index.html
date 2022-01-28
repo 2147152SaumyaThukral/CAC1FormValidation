@@ -1,0 +1,92 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Christ University Campus Feedback Form</title>
+</head>
+
+<body>
+
+	<h2 style="font-size:35px;font-style:bold"> Campus Visit </h2>
+	<h3 style="color:orange"> Feedback Form </h3>
+	<h4 style="color:orange"> 28th of January, 2022 </h4>
+
+<p>
+On 28th of January, 2022, you have visited our Christ campus.<br>  
+Fill out this form to help us organise the campus visit event better.
+</p>
+
+<form>
+	<table>
+		<tr>
+			<td>Your First Name:</td>
+			<td><input type="text" id="firstname" onkeypress="return onlyChar(Event) " name=""
+				onkeyup="checkName('firstname')"></td>
+		</tr>
+		<tr>
+			<td>Your Last Name:</td>
+			<td><input type="text" id="lastname" onkeypress="return onlyChar(Event) " name=""
+				onkeyup="checkName('lastname')"></td>
+		</tr>
+        <tr>
+			<td>Your Address:</td>
+			<td><input type="text" id="address" name=""
+				onkeyup="checkName('address')"></td>
+
+		</tr>
+		<tr>
+			<td>Your Email:</td>
+			<td><input type="email" id="email" onkeyup="checkEmail()" email=""></td>
+
+		</tr>
+        <tr>
+			<td>Password:</td>
+			<td><input type="test" id="password" 
+				onkeyup="checkPassword()" password=""></td>
+
+		</tr>
+		<tr>
+			<td>Which of the following did you like the most about the campus?</td>
+			<td><input type="checkbox" name="Students" value="1"> Students<br>
+			      <input type="checkbox" name="Location" value="2"> Location<br>
+			      <input type="checkbox" name="Campus" value="3"> Campus<br>
+			      <input type="checkbox" name="Atmosphere" value="4"> Atmosphere<br>
+                  <input type="checkbox" name="Dorm Rooms" value="5"> Dorm Rooms<br>
+                  <input type="checkbox" name="Sports" value="6"> Sports<br>
+			</td>
+		</tr>
+		<tr>
+			<td>How did you become interested in the University?</td>
+			<td><input type="radio" name="Friends" value="1"> Friends<br>
+			      <input type="radio" name="Television" value="2"> Television<br>
+			      <input type="radio" name="Internet" value="3"> Internet<br>
+                  <input type="radio" name="Others" value="4"> Others<br>
+			</td>
+		</tr>
+		<tr>
+			<td>Provide additional feedback.</td>
+			<td><textarea height="100" width="40" placeholder="Comment here..." ></textarea>
+			</td>
+		</tr> 
+		
+			
+
+	</table>
+<p> After filling up all the details in this from, click the Submit button below.<br>
+Or, to reset the form, click on the Reset button below.  </p>
+<button onsubmit="validation(Event)" class="form" id="form">Submit</button>
+<button onclick="myFunction()">Reset</button>
+<p id="demo"></p>
+
+<script src="2147152CAC1FormValidation.js">
+
+
+</script>
+</form>
+
+</body>
+
+</html>
