@@ -1,27 +1,29 @@
-let firstname, lastname, email, password;
+let firstname, lastname, email, password, address;
 
 successStatus ={
     validfirstname: 0,
     validlastname: 0,
     validemail: 0,
     validpassword: 0,
+    validaddress: 0,
 };
 
-onlyChar = (Event) => {
-    let input = Event.which;
+onlyChar = (event) => {
+    let input = event.which;
     if (input >47 && input <58)
     return false;
     else
     return true;
 };
 
-validation = (Event) => {
-    Event.preventDefault();
+validation = (event) => {
+    event.preventDefault();
     checkName("firstname");
     checkName("lastname");
     checkpassword();
     checkemail();
-    if (statusChecker()===4) {
+    checkaddress();
+    if (statusChecker()===5) {
         userInfo ={
             firstname: firstname,
             lastname: lastname,
@@ -66,6 +68,28 @@ checkName = (id) => {
         }
     }
     }
+
+    checkaddress = (id) => {
+        const address = document.getElementById(id);
+        const addressVal = address.value.trim();
+        console.log(address);
+    
+        if (id === "address") {
+            address = addressVal;
+        }
+    
+        if (addressVal === "") {
+            if(id === "address") {
+                successStatus.validaddress = 0;
+                return error(address, "Cannot be empty");
+            }
+        }else {
+            if(id === "address") {
+                successStatus.validaddress =1;
+                return success(address);
+            } 
+        }
+        }
 
     checkpassword = () => {
         password = document.getElementById("password");
@@ -150,5 +174,5 @@ checkName = (id) => {
     }
 
     function myFunction() {
-        document.getElementById("demo").innerHTML="FORM RESET";
+        document.getElementById("form").reset();
         }
