@@ -5,88 +5,180 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+
+	<script
+      src="https://kit.fontawesome.com/bc4d8abcd3.js"
+      crossorigin="anonymous"
+    ></script>
+
 <title>Christ University Campus Feedback Form</title>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0%;
+	}
+	.formbody {
+		background-color: white;
+		border-radius: 4px;
+		overflow: hidden;
+		width: 500px;
+		max-width: 100%;
+	}
+	.form-control {
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+		position: relative;
+	}	
+
+	.form-control label {
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	
+	.form-control input{
+		border: 2px solid #f0f0f0;
+		border-radius: 4px;
+		display: block;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.form-control.success input {
+		border-color: green;
+	}
+
+	.form-control.error input {
+		border-color: red;
+	}
+
+	.form-control.success check-circle {
+		color: green;
+	}
+
+	.form-control.error exclamation-circle {
+		color: red;
+	}
+
+	.form-control small {
+		color: red;
+		visibility: hidden;
+	}
+
+	.form-control.error small {
+		visibility: visible;
+	}
+
+	.form-control.success check-circle {
+		color: green;
+		visibility: visible;
+	}
+
+	.form-control.error exclamation-circle {
+		color: red;
+		visibility: visible;
+	}
+
+	.form-control i {
+		visibility: hidden;
+	}
+	</style>
 </head>
 
 <body>
+	<div class="formbody">
 
-	<h2 style="font-size:35px;font-style:bold"> Campus Visit </h2>
-	<h3 style="color:orange"> Feedback Form </h3>
-	<h4 style="color:orange"> 28th of January, 2022 </h4>
+	<h2 style="font-size:35px;font-style:bold;text-align: center;"> Campus Visit </h2>
+	<h3 style="color:orange;text-align: center;"> Feedback Form </h3>
+	<h4 style="color:orange; text-align: center;"> 28th of January, 2022 </h4>
 
-<p>
+<p style="text-align: center;">
 On 28th of January, 2022, you have visited our Christ campus.<br>  
 Fill out this form to help us organise the campus visit event better.
 </p>
 
-<form>
-	<table>
-		<tr>
-			<td>Your First Name:</td>
-			<td><input type="text" id="firstname" onkeypress="return onlyChar(Event) " name=""
-				onkeyup="checkName('firstname')"></td>
-		</tr>
-		<tr>
-			<td>Your Last Name:</td>
-			<td><input type="text" id="lastname" onkeypress="return onlyChar(Event) " name=""
-				onkeyup="checkName('lastname')"></td>
-		</tr>
-        <tr>
-			<td>Your Address:</td>
-			<td><input type="text" id="address" name=""
-				onkeyup="checkName('address')"></td>
-
-		</tr>
-		<tr>
-			<td>Your Email:</td>
-			<td><input type="email" id="email" onkeyup="checkEmail()" email=""></td>
-
-		</tr>
-        <tr>
-			<td>Password:</td>
-			<td><input type="test" id="password" 
-				onkeyup="checkPassword()" password=""></td>
-
-		</tr>
-		<tr>
-			<td>Which of the following did you like the most about the campus?</td>
-			<td><input type="checkbox" name="Students" value="1"> Students<br>
+<form onsubmit="validation(event)" class="form" id="form">
+	<div class="form-control">
+	<label for="firstname">Your First Name:</label>
+			<input type="text" id="firstname" onkeypress="return onlyChar(Event) " name=""
+				onkeyup="checkName('firstname')" />
+				<i class="check-circle"></i>
+				<i class="exclamation-circle"></i>
+				<small>Error</small>
+	</div>
+		<div class="form-control">
+			<label for="lastname">Your Last Name:</label>
+			<input type="text" id="lastname" onkeypress="return onlyChar(Event) " name=""
+				onkeyup="checkName('lastname')" />
+				<i class="check-circle"></i>
+				<i class="exclamation-circle"></i>
+				<small>Error</small>
+		</div>
+        <div class="form-control">
+			<label for="address">Your Address:</label>
+			<input type="text" id="address"
+				onkeyup="checkaddress('address')" address=""/>
+				<i class="check-circle"></i>
+				<i class="exclamation-circle"></i>
+				<small>Error</small>
+		</div>
+		<div class="form-control">
+			<label for="email">Your Email:</label>
+			<input type="email" id="email" onkeyup="checkemail()" email="" />
+			<i class="check-circle"></i>
+				<i class="exclamation-circle"></i>
+				<small>Error</small>
+		</div>
+        <div class="form-control">
+			<label for="password">Password:</label>
+			<input type="test" id="password" 
+				onkeyup="checkpassword()" password="" />
+				<i class="check-circle"></i>
+				<i class="exclamation-circle"></i>
+				<small>Error</small>
+		</div>
+		<div>
+			<p>Which of the following did you like the most about the campus?<br>
+				  <input type="checkbox" name="Students" value="1"> Students<br>
 			      <input type="checkbox" name="Location" value="2"> Location<br>
 			      <input type="checkbox" name="Campus" value="3"> Campus<br>
 			      <input type="checkbox" name="Atmosphere" value="4"> Atmosphere<br>
                   <input type="checkbox" name="Dorm Rooms" value="5"> Dorm Rooms<br>
                   <input type="checkbox" name="Sports" value="6"> Sports<br>
-			</td>
-		</tr>
-		<tr>
-			<td>How did you become interested in the University?</td>
-			<td><input type="radio" name="Friends" value="1"> Friends<br>
-			      <input type="radio" name="Television" value="2"> Television<br>
-			      <input type="radio" name="Internet" value="3"> Internet<br>
-                  <input type="radio" name="Others" value="4"> Others<br>
-			</td>
-		</tr>
-		<tr>
-			<td>Provide additional feedback.</td>
-			<td><textarea height="100" width="40" placeholder="Comment here..." ></textarea>
-			</td>
-		</tr> 
+			</p>
+		</div>
+		<div>
+			<p>How did you become interested in the University? <br>
+			<input type="radio" name="Friends" value="1"> Friends<br>
+			<input type="radio" name="Television" value="2"> Television<br>
+			<input type="radio" name="Internet" value="3"> Internet<br>
+            <input type="radio" name="Others" value="4"> Others<br>
+			</p>
+		</div>
+		<div>
+			<p>Provide additional feedback.
+			<textarea height="100" width="40" placeholder="Comment here..." ></textarea>
+			</p>
+		</div> 
 		
 			
 
-	</table>
+
 <p> After filling up all the details in this from, click the Submit button below.<br>
 Or, to reset the form, click on the Reset button below.  </p>
-<button onsubmit="validation(Event)" class="form" id="form">Submit</button>
+<button type='submit' onclick="validation()">Submit</button>
 <button onclick="myFunction()">Reset</button>
-<p id="demo"></p>
-
-<script src="2147152CAC1FormValidation.js">
-
-
-</script>
 </form>
 
+<script src="2147152CAC1FormValidation.js"></script>
+	</div>
 </body>
 
 </html>
